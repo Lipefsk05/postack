@@ -1,0 +1,10 @@
+-- CreateTable
+CREATE TABLE "PostMedia" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "postId" TEXT NOT NULL,
+    "filePath" TEXT NOT NULL,
+    "fileType" TEXT NOT NULL,
+    "fileOrder" INTEGER NOT NULL DEFAULT 0,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT "PostMedia_postId_fkey" FOREIGN KEY ("postId") REFERENCES "Post" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
